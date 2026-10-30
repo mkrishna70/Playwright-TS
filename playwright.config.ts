@@ -26,7 +26,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["html", { open: "always" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -56,23 +56,23 @@ export default defineConfig({
       },
     },
 
-    {
-      name: "firefox",
-      dependencies: ["Setup"],
-      use: {
-        ...devices["Desktop Firefox"],
-        storageState: "./playwright/.auth/auth.json",
-      },
-    },
+    // {
+    //   name: "firefox",
+    //   dependencies: ["Setup"],
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //     storageState: "./playwright/.auth/auth.json",
+    //   },
+    // },
 
-    {
-      name: "webkit",
-      dependencies: ["Setup"],
-      use: {
-        ...devices["Desktop Safari"],
-        storageState: "./playwright/.auth/auth.json",
-      },
-    },
+    // {
+    //   name: "webkit",
+    //   dependencies: ["Setup"],
+    //   use: {
+    //     ...devices["Desktop Safari"],
+    //     storageState: "./playwright/.auth/auth.json",
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {

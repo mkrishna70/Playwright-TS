@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
 
 test("app1", async ({ page }) => {
+  console.log('-----------1---------')
   await page.goto("https://sdetqa.vercel.app/autoplay");
 });
 

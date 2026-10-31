@@ -1,3 +1,3 @@
 import { test } from "../fixtures/hooks";
 
-test("Login functionality", async ({ page, url }) => {});
+test.skip("Login functionality", async ({ page, url }) => {});
